@@ -25,13 +25,17 @@ public class RootSystem : MonoBehaviour
 
     void Update()
     {
-        
+        // TODO A) First attempt will be to incrementally grow the root by adding points to a LineRenderer
     }
 
     public bool IsRooted() => _root.enabled;
 
     internal void Root()
     {
+        // TODO A) Cast a ray along local y axis and find nearest "Ground"
+        // TODO B) Then grow the root non-linearly toward the target position
+        // TODO C) Finally anchor to that contact point at the end of the root
+        // TODO D*) Later just set the target point so that we can lerp the root growth over some short interval
         // extends the root mesh out beyond the seed body mesh
         transform.Find("BrootusRoot").transform.Translate(Vector3.up * _transform.localScale.y, relativeTo: _transform);
         // extends the root trigger-collider out just beyond the tip of the seed body collider
@@ -41,6 +45,7 @@ public class RootSystem : MonoBehaviour
 
     internal void Unroot()
     {
+        // TODO Break off the root at the base to release
         _root.center += 0.3f * Vector3.down;
         _root.enabled = false;
         GetComponent<Rigidbody>().ResetCenterOfMass();
