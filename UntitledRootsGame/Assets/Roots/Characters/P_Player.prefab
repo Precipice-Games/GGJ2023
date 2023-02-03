@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 48468072}
   - component: {fileID: 48468074}
   - component: {fileID: 48468073}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Hurt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,6 +76,124 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &301021890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 301021891}
+  - component: {fileID: 301021894}
+  - component: {fileID: 301021893}
+  - component: {fileID: 301021892}
+  m_Layer: 7
+  m_Name: FaceCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &301021891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301021890}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2.5, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7862059893056333877}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!20 &301021894
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301021890}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 4
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 20.78461
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60.000004
+  orthographic: 0
+  orthographic size: 1
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8400000, guid: 077d241fe516f7041a4af78134337581, type: 2}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &301021893
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301021890}
+  m_Enabled: 1
+--- !u!114 &301021892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301021890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &2634662576334529234
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +205,7 @@ GameObject:
   - component: {fileID: 5586204962486604861}
   - component: {fileID: 6530726750435302676}
   - component: {fileID: 2905403337313292794}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Excited
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +281,7 @@ GameObject:
   - component: {fileID: 3872203364714593314}
   - component: {fileID: 297483034374859430}
   - component: {fileID: 959867433471417468}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: EyesClosed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +358,7 @@ GameObject:
   - component: {fileID: 6535987790255548304}
   - component: {fileID: 9029867945905886042}
   - component: {fileID: 975806410187629012}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: P_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,6 +379,7 @@ Transform:
   m_Children:
   - {fileID: 7678950365363670151}
   - {fileID: 543450652122275325}
+  - {fileID: 301021891}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -346,7 +465,7 @@ GameObject:
   - component: {fileID: 7678950365363670202}
   - component: {fileID: 7678950365363670149}
   - component: {fileID: 7678950365363670148}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +568,7 @@ GameObject:
   - component: {fileID: 7678950365728183518}
   - component: {fileID: 7678950365728183516}
   - component: {fileID: 7678950365728183519}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: EyesOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,10 +724,10 @@ Cloth:
   m_GameObject: {fileID: 919132148450166599}
   m_Enabled: 1
   m_StretchingStiffness: 1
-  m_BendingStiffness: 0
+  m_BendingStiffness: 1
   m_UseTethers: 1
-  m_UseGravity: 1
-  m_Damping: 0
+  m_UseGravity: 0
+  m_Damping: 0.5
   m_ExternalAcceleration: {x: 0, y: 0, z: 0}
   m_RandomAcceleration: {x: 0, y: 0, z: 0}
   m_WorldVelocityScale: 0.5
