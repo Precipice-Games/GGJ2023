@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6398374004071235672}
   - component: {fileID: 688758792352316682}
   - component: {fileID: 4363294336487801022}
-  m_Layer: 0
+  - component: {fileID: 2545288479070620714}
+  m_Layer: 6
   m_Name: P_TileBlock_Crate
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,3 +115,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2545288479070620714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885116081199194509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a1eca5becd91845a765bae1127088d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fracturedCrate: {fileID: 8721442263481613407, guid: 3f23b8bb21f3a7a4aa25bfa441c9e1f4,
+    type: 3}
