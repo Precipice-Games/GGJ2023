@@ -14,8 +14,8 @@ public class BrootusController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             var roots = GetComponent<RootSystem>();
-            if (roots.IsRooted()) roots.Unroot();
-            else roots.Root();
+            if (roots.HasRoots()) roots.Uproot();
+            else roots.GrowRoot();
         }
     }
 }
