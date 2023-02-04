@@ -33,7 +33,7 @@ public class RootSystem : MonoBehaviour
     internal void Root()
     {
         // extends the root mesh out beyond the seed body mesh
-        transform.Find("BrootusRoot").transform.Translate(Vector3.up * _transform.localScale.y, relativeTo: _transform);
+        //transform.Find("BrootusRoot").transform.Translate(Vector3.up * _transform.localScale.y, relativeTo: _transform);
         // extends the root trigger-collider out just beyond the tip of the seed body collider
         _root.center += 0.3f * Vector3.up;
         _root.enabled = true;
@@ -47,8 +47,8 @@ public class RootSystem : MonoBehaviour
         GetComponent<Rigidbody>().mass = UnrootedMass;
         GetComponent<Rigidbody>().angularDrag = UnrootedAngularDrag;
 
-        _transform.Find("BrootusRoot").transform
-            .Translate(Vector3.down * _transform.localScale.y, relativeTo: _transform);
+        //_transform.Find("BrootusRoot").transform
+            //.Translate(Vector3.down * _transform.localScale.y, relativeTo: _transform);
         Destroy(_rootcap);
         _rootcap = null;
     }
