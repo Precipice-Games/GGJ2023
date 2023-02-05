@@ -1,4 +1,3 @@
-using Roots.Environment;
 using Roots.Gameplay;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,13 +14,13 @@ namespace Roots.UI
 		private void OnEnable()
 		{
 			Pot.OnVictory += WinGame;
-			Thorns.OnDead += LoseGame;
+			BrootusController.OnDead += LoseGame;
 		}
 
 		private void OnDisable()
 		{
 			Pot.OnVictory -= WinGame;
-			Thorns.OnDead -= LoseGame;
+			BrootusController.OnDead -= LoseGame;
 		}
 
 		public void LoadLevel(int index)

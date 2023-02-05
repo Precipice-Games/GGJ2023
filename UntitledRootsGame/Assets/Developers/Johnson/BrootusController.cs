@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class BrootusController : MonoBehaviour
 {
-	private void Start()
-	{
-	}
+	[field: SerializeField] public float KillPlane { get; private set; }
+	public delegate void DeadHandler();
+
+	public static event DeadHandler OnDead;
 
 	private void Update()
 	{
@@ -16,5 +17,13 @@ public class BrootusController : MonoBehaviour
 			else
 				roots.GrowRoot();
 		}
+
+		if(transform.position.y < KillPlane)
+			Die();
+	}
+
+	public void Die()
+	{
+		OnDead?.Invoke();
 	}
 }

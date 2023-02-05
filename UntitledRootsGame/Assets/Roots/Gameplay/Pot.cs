@@ -17,6 +17,7 @@ namespace Roots.Gameplay
 			{
 				Debug.Log("Victory");
 				IncreaseMaxLevel();
+				OnVictory?.Invoke();
 			}
 		}
 
@@ -25,7 +26,6 @@ namespace Roots.Gameplay
 			if (_maxLevel.Value > _currentLevel.Value)
 				return;
 			_maxLevel.Value = _currentLevel.Value + 1;
-			OnVictory?.Invoke();
 		}
 	}
 }
