@@ -9,6 +9,9 @@ using UnityEngine.Assertions;
 /// </todo>
 public class RootSystem : MonoBehaviour
 {
+	[SerializeField] private AudioClip _latch;
+	[SerializeField] private AudioClip _unlatch;
+	private AudioSource _source;
 	private const float RootDamper = 1000f;
 	private const float RootSpring = 200000f;
 	private const float RootTolerance = 0.01f;
@@ -34,6 +37,7 @@ public class RootSystem : MonoBehaviour
 	/// <summary>A root system initially has no root grown out; i.e., will not enroot to other objects.</summary>
 	private void Start()
 	{
+		_source = GetComponent<AudioSource>();
 		_transform = transform;
 		_uprootedMass = GetComponent<Rigidbody>().mass;
 		_uprootedMass = GetComponent<Rigidbody>().angularDrag;
@@ -68,6 +72,7 @@ public class RootSystem : MonoBehaviour
 	/// <todo>Trigger dissolve for the root left behind</todo>
 	internal void Uproot()
 	{
+		GetComponent<Rigidbody>().velocity = Vector3.zero;
 		GetComponent<Rigidbody>().mass = _uprootedMass;
 		GetComponent<Rigidbody>().angularDrag = _uprootedAngularDrag;
 		GetComponent<Rigidbody>().useGravity = true;
@@ -75,6 +80,7 @@ public class RootSystem : MonoBehaviour
 		_rootLinkage = null;
 		_rootTendrils.transform.parent = null;
 		_root.enabled = false;
+		_source.PlayOneShot(_unlatch);
 	}
 
 	/// <summary>Anchors the roots to a <paramref name="substrate" />.</summary>
@@ -93,6 +99,7 @@ public class RootSystem : MonoBehaviour
 		_rootLinkage.tolerance = RootTolerance;
 		_rootLinkage.anchor = _root.center;
 		_rootLinkage.connectedBody = _ground;
+		_source.PlayOneShot(_latch);
 	}
 
 	/// <summary>When the root collides with a "Ground" object we will enroot.</summary>
