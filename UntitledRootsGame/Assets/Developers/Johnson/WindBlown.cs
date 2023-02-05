@@ -1,33 +1,43 @@
 using UnityEngine;
 
+/// <summary>Governs the behavior of objects susceptible to wind.</summary>
 public class WindBlown : MonoBehaviour
 {
-	private Rigidbody _rb;
+    /// <summary>Reference to wind currently affecting this object.</summary>
+    internal Wind _windZone;
 
-	private GameObject _windZone;
+    private Rigidbody _rb;
 
-	public bool InWindZone => _windZone != null;
+    /// <summary>Checks whether this object is under the influence of wind.</summary>
+    public bool InWindZone => _windZone;
 
-	private void Start()
-	{
-		_rb = GetComponent<Rigidbody>();
-	}
+    void Start()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
 
-	private void FixedUpdate()
-	{
-		if (InWindZone)
-			_rb.AddForce(_windZone.GetComponent<Wind>().Strength * _windZone.GetComponent<Wind>().Direction);
-	}
+    void FixedUpdate()
+    {
+        if (InWindZone)
+        {
+            _rb.velocity = 0.25f * _rb.velocity;
+            _rb.AddForce(_windZone.Force(transform.position));
+        }
+    }
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.gameObject.CompareTag("Wind"))
-			_windZone = other.gameObject;
-	}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Wind"))
+        {
+            _windZone = other.GetComponent<Wind>();
+        }
+    }
 
-	private void OnTriggerExit(Collider other)
-	{
-		if (other.gameObject.CompareTag("Wind"))
-			_windZone = null;
-	}
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Wind"))
+        {
+            _windZone = null;
+        }
+    }
 }
