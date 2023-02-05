@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1859801262568344846}
   - component: {fileID: 7564420411153893452}
   m_Layer: 0
-  m_Name: WindWave
+  m_Name: P_Wind_Wave
   m_TagString: Wind
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

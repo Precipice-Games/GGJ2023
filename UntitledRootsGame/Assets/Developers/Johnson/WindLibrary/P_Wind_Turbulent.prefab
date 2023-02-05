@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5446756351604682096}
   - component: {fileID: 7564420411153893452}
   m_Layer: 0
-  m_Name: WindTurbulent
+  m_Name: P_Wind_Turbulent
   m_TagString: Wind
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

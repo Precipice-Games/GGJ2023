@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5785730561159352917}
   - component: {fileID: 5446756351604682096}
-  - component: {fileID: 6589052338218695114}
+  - component: {fileID: 7564420411153893452}
   m_Layer: 0
-  m_Name: WindVortex
+  m_Name: P_Wind_Box
   m_TagString: Wind
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,12 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prevailingDirection: {x: 1, y: 0}
-  prevailingStrength: 2
+  prevailingStrength: 3
   gusts: 0.5
-  spread: 0
-  pattern: 3
---- !u!135 &6589052338218695114
-SphereCollider:
+  spread: 5
+  pattern: 0
+--- !u!65 &7564420411153893452
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -61,5 +61,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
