@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8792936006438431473}
   - component: {fileID: 5577729445856004164}
   - component: {fileID: 6718885236028813365}
+  - component: {fileID: 127573191}
   m_Layer: 0
   m_Name: P_TileBlock_Pot
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6991333495644523300}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1.9, y: 1.9, z: 1.9}
   m_ConstrainProportionsScale: 0
@@ -116,3 +117,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &127573191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991333495644523300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ee34725370a5f40957b7f297b3ccc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLevel: {fileID: 11400000, guid: a45fa4f3373b1f64db2222df6dcf3fef, type: 2}
+  _currentLevel: {fileID: 11400000, guid: 343894384b9c49f49bfd0757900723c7, type: 2}

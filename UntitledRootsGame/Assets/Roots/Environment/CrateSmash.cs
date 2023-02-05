@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public class CrateSmash : MonoBehaviour
+namespace Roots.Environment
 {
-    [SerializeField] private GameObject _fracturedCrate;
+	public class CrateSmash : MonoBehaviour
+	{
+		[SerializeField] private GameObject _fracturedCrate;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            Shatter();
-        }
-    }
+		private void OnCollisionEnter(Collision collision)
+		{
+			if(collision.gameObject.CompareTag("Player"))
+			{
+				Shatter();
+			}
+		}
 
-    private void Shatter()
-    {
-        Instantiate(_fracturedCrate, transform.position, transform.rotation);
-        Destroy(this.gameObject);
-    }
+		private void Shatter()
+		{
+			Instantiate(_fracturedCrate, transform.position, transform.rotation);
+			Destroy(this.gameObject);
+		}
+	}
 }
