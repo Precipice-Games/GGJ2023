@@ -72,13 +72,14 @@ public class RootSystem : MonoBehaviour
 	/// <todo>Trigger dissolve for the root left behind</todo>
 	internal void Uproot()
 	{
+		if (_rootLinkage == null) return;
 		GetComponent<Rigidbody>().velocity = Vector3.zero;
 		GetComponent<Rigidbody>().mass = _uprootedMass;
 		GetComponent<Rigidbody>().angularDrag = _uprootedAngularDrag;
 		GetComponent<Rigidbody>().useGravity = true;
+		_rootTendrils.transform.parent = _rootLinkage.connectedBody.transform;
 		Destroy(_rootLinkage);
 		_rootLinkage = null;
-		_rootTendrils.transform.parent = null;
 		_root.enabled = false;
 		_source.PlayOneShot(_unlatch);
 	}
