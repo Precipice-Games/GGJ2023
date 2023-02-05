@@ -40,7 +40,7 @@ public class RootSystem : MonoBehaviour
 		_source = GetComponent<AudioSource>();
 		_transform = transform;
 		_uprootedMass = GetComponent<Rigidbody>().mass;
-		_uprootedMass = GetComponent<Rigidbody>().angularDrag;
+		_uprootedAngularDrag = GetComponent<Rigidbody>().angularDrag;
 		_root = (from c in GetComponents<CapsuleCollider>() where c.isTrigger select c).First();
 		Assert.IsNotNull(_root);
 		_root.enabled = false;
