@@ -62,9 +62,9 @@ public class RootSystem : MonoBehaviour
 	/// <summary>Grows out the root tendrils and enables the collision-detecting for rooting.</summary>
 	internal void GrowRoot()
 	{
-		_rootTendrils = Instantiate(rootTendrils, _transform, false);
-		_rootTendrils.transform.localPosition = new Vector3(0, 0.25f, 0);
-		_rootTendrils.SetActive(true);
+		// _rootTendrils = Instantiate(rootTendrils, _transform, false);
+		// _rootTendrils.transform.localPosition = new Vector3(0, 0.25f, 0);
+		// _rootTendrils.SetActive(true);
 		_root.enabled = true;
 	}
 
@@ -88,6 +88,10 @@ public class RootSystem : MonoBehaviour
 	/// <param name="substrate">a rigidbody to which the roots will anchor</param>
 	private void Enroot(Rigidbody substrate)
 	{
+		_rootTendrils = Instantiate(rootTendrils, _transform, false);
+		_rootTendrils.transform.localPosition = new Vector3(0, 0.25f, 0);
+		_rootTendrils.SetActive(true);
+
 		_ground = substrate;
 		GetComponent<Rigidbody>().mass = rootedMass;
 		GetComponent<Rigidbody>().angularDrag = rootedAngularDrag;
