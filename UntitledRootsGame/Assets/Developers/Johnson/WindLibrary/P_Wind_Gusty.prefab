@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5446756351604682096}
   - component: {fileID: 7564420411153893452}
   m_Layer: 0
-  m_Name: P_Wind_Box
+  m_Name: P_Wind_Gusty
   m_TagString: Wind
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,9 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prevailingDirection: {x: 1, y: 0}
-  prevailingStrength: 3
-  gusts: 0.5
-  spread: 5
+  prevailingStrength: 10
+  gustStrength: 10
+  gustDuration: 5
+  shiftAngle: 0
+  shiftDuration: 0
   pattern: 0
 --- !u!65 &7564420411153893452
 BoxCollider:
