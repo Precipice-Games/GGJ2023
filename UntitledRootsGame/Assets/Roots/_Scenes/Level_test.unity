@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15852915, g: 0.51697636, b: 1.0388882, a: 1}
+  m_IndirectSpecularColor: {r: 0.15858914, g: 0.5169876, b: 1.0388093, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1396,6 +1396,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1642995465}
     m_Modifications:
+    - target: {fileID: 5446756351604682096, guid: 716307081312e3c4298cd178a0a8b38b,
+        type: 3}
+      propertyPath: gustDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446756351604682096, guid: 716307081312e3c4298cd178a0a8b38b,
+        type: 3}
+      propertyPath: gustStrength
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446756351604682096, guid: 716307081312e3c4298cd178a0a8b38b,
+        type: 3}
+      propertyPath: prevailingStrength
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5785730561159352917, guid: 716307081312e3c4298cd178a0a8b38b,
         type: 3}
       propertyPath: m_RootOrder
@@ -1546,8 +1561,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5446756351604682096, guid: 72abf2f4f5043624e8131a02586bdb84,
         type: 3}
+      propertyPath: shiftAngle
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446756351604682096, guid: 72abf2f4f5043624e8131a02586bdb84,
+        type: 3}
+      propertyPath: gustDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446756351604682096, guid: 72abf2f4f5043624e8131a02586bdb84,
+        type: 3}
+      propertyPath: gustStrength
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446756351604682096, guid: 72abf2f4f5043624e8131a02586bdb84,
+        type: 3}
+      propertyPath: shiftDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446756351604682096, guid: 72abf2f4f5043624e8131a02586bdb84,
+        type: 3}
       propertyPath: prevailingStrength
-      value: 200
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5446756351604682096, guid: 72abf2f4f5043624e8131a02586bdb84,
         type: 3}
@@ -1998,6 +2033,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1642995465}
     m_Modifications:
+    - target: {fileID: 5446756351604682096, guid: 45ffe4f124189e640966be28006b3dab,
+        type: 3}
+      propertyPath: gustDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446756351604682096, guid: 45ffe4f124189e640966be28006b3dab,
+        type: 3}
+      propertyPath: gustStrength
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5446756351604682096, guid: 45ffe4f124189e640966be28006b3dab,
         type: 3}
       propertyPath: prevailingStrength
