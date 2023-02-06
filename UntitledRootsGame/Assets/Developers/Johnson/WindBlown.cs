@@ -20,7 +20,6 @@ public class WindBlown : MonoBehaviour
     {
         if (InWindZone)
         {
-            _rb.velocity = 0.25f * _rb.velocity;
             _rb.AddForce(_windZone.Force(transform.position));
         }
     }

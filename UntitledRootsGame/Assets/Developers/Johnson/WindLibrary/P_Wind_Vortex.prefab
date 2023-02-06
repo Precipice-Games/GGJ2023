@@ -46,10 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prevailingDirection: {x: 1, y: 0}
-  prevailingStrength: 2
-  gusts: 0.5
-  spread: 0
-  pattern: 3
+  prevailingStrength: 10
+  gustStrength: 5
+  gustDuration: 5
+  shiftAngle: 0
+  shiftDuration: 0
+  pattern: 2
 --- !u!135 &6589052338218695114
 SphereCollider:
   m_ObjectHideFlags: 0

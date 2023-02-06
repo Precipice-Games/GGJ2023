@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5785730561159352917}
   - component: {fileID: 5446756351604682096}
-  - component: {fileID: 3505782655722614}
+  - component: {fileID: 7564420411153893452}
   m_Layer: 0
-  m_Name: P_Wind_Cone
+  m_Name: P_Wind_Steady
   m_TagString: Wind
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,13 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37404d01d56726b43ad977fe984618a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prevailingDirection: {x: 0, y: 0}
-  prevailingStrength: 2
-  gusts: 0.5
-  spread: 15
+  prevailingDirection: {x: 1, y: 0}
+  prevailingStrength: 10
+  gustStrength: 0
+  gustDuration: 0
+  shiftAngle: 0
+  shiftDuration: 0
   pattern: 0
---- !u!64 &3505782655722614
-MeshCollider:
+--- !u!65 &7564420411153893452
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -60,7 +62,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3613567641014311022, guid: 324d0c89c30cfe2439dc723393f4c446, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
