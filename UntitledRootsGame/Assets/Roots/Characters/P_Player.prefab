@@ -664,7 +664,7 @@ MonoBehaviour:
   _unlatch: {fileID: 8300000, guid: 929bc92d3fb2daa438e83bdae94d6d23, type: 3}
   rootedAngularDrag: 20
   rootedMass: 1000
-  rootTendrils: {fileID: 919132149155446097, guid: d138233ef3c49ff4eac9a4321f510e0a,
+  rootTendrils: {fileID: 2370441922565977768, guid: 3ffabbc7770641845872e25a7a9e22ce,
     type: 3}
 --- !u!114 &1052295397751978032
 MonoBehaviour:
