@@ -62,9 +62,9 @@ public class RootSystem : MonoBehaviour
 	/// <summary>Grows out the root tendrils and enables the collision-detecting for rooting.</summary>
 	internal void GrowRoot()
 	{
-		_rootTendrils = Instantiate(rootTendrils, _transform, false);
-		_rootTendrils.transform.localPosition = new Vector3(0, 0.25f, 0);
-		_rootTendrils.SetActive(true);
+		// _rootTendrils = Instantiate(rootTendrils, _transform, false);
+		// _rootTendrils.transform.localPosition = new Vector3(0, 0.25f, 0);
+		// _rootTendrils.SetActive(true);
 		_root.enabled = true;
 	}
 
@@ -72,13 +72,14 @@ public class RootSystem : MonoBehaviour
 	/// <todo>Trigger dissolve for the root left behind</todo>
 	internal void Uproot()
 	{
+		if (_rootLinkage == null) return;
 		GetComponent<Rigidbody>().velocity = Vector3.zero;
 		GetComponent<Rigidbody>().mass = _uprootedMass;
 		GetComponent<Rigidbody>().angularDrag = _uprootedAngularDrag;
 		GetComponent<Rigidbody>().useGravity = true;
+		_rootTendrils.transform.parent = _rootLinkage.connectedBody.transform;
 		Destroy(_rootLinkage);
 		_rootLinkage = null;
-		_rootTendrils.transform.parent = null;
 		_root.enabled = false;
 		_source.PlayOneShot(_unlatch);
 	}
@@ -87,6 +88,10 @@ public class RootSystem : MonoBehaviour
 	/// <param name="substrate">a rigidbody to which the roots will anchor</param>
 	private void Enroot(Rigidbody substrate)
 	{
+		_rootTendrils = Instantiate(rootTendrils, _transform, false);
+		_rootTendrils.transform.localPosition = new Vector3(0, 0.25f, 0);
+		_rootTendrils.SetActive(true);
+
 		_ground = substrate;
 		GetComponent<Rigidbody>().mass = rootedMass;
 		GetComponent<Rigidbody>().angularDrag = rootedAngularDrag;
