@@ -1,5 +1,6 @@
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
 
 /// <summary>Wind force for pushing the player around</summary>
@@ -35,7 +36,7 @@ public class Wind : MonoBehaviour
 
 	private float gustStrength = 0;
 
-	[Tooltip("How long periodic wind gusts last (in seconds)"), SerializeField]
+	[Tooltip("How long periodic wind gusts last (in seconds). NOTE: Must be strictly positive!"), SerializeField]
 
 	private float gustDuration = 1f;
 
@@ -43,9 +44,9 @@ public class Wind : MonoBehaviour
 
 	private float shiftAngle = 0;
 
-	[Tooltip("How long to complete one cycle of direction changes (in seconds)"), SerializeField]
+	[Tooltip("How long to complete one cycle of direction change (in seconds). NOTE: Must be strictly positive!"), SerializeField]
 
-	private float shiftDuration = 0;
+	private float shiftDuration = 1f;
 
 	[Tooltip("Pattern of variability for this wind"), SerializeField]
 
@@ -60,6 +61,8 @@ public class Wind : MonoBehaviour
 		prevailingDirection.Normalize();
 		_currentDirection = prevailingDirection;
 		_currentStrength = prevailingStrength;
+		Assert.IsTrue(gustDuration > 0);
+		Assert.IsTrue(shiftDuration > 0);
 	}
 
 	/// <summary>Computes the wind force applied at a given position within a wind zone.</summary>

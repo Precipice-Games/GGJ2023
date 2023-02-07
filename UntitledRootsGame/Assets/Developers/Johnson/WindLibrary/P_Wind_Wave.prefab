@@ -49,7 +49,7 @@ MonoBehaviour:
   prevailingDirection: {x: 1, y: 0}
   prevailingStrength: 10
   gustStrength: 0
-  gustDuration: 0
+  gustDuration: 1
   shiftAngle: 45
   shiftDuration: 2
   pattern: 0
