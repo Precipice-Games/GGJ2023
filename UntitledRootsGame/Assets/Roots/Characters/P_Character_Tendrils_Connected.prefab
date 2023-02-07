@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2018047383870530487}
   - component: {fileID: 3180924038190692614}
   - component: {fileID: 3180924038190692615}
+  - component: {fileID: 3780724182334174943}
   m_Layer: 0
   m_Name: P_Character_Tendrils_Connected
   m_TagString: Untagged
@@ -26796,7 +26797,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 201679973854296888, guid: d138233ef3c49ff4eac9a4321f510e0a, type: 3}
+  - {fileID: 2100000, guid: 72197bd11939a5148a0778df6b2eb2bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26819,13 +26820,27 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 7224928933254213486, guid: d138233ef3c49ff4eac9a4321f510e0a, type: 3}
   m_Bones: []
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.013231084, y: 1.4761549, z: -0.059952617}
-    m_Extent: {x: 0.21260878, y: 1.385384, z: 0.66776}
+    m_Center: {x: -0.013179705, y: 1.4789352, z: -0.059902787}
+    m_Extent: {x: 0.21254882, y: 1.3853462, z: 0.6677264}
   m_DirtyAABB: 0
+--- !u!114 &3780724182334174943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2370441922565977768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbacddee415713469b3adc80af38a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mat: {fileID: 2100000, guid: 72197bd11939a5148a0778df6b2eb2bb, type: 2}
+  dissolveSpeed: 3

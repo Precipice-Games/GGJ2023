@@ -3,13 +3,22 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 /// <summary>Wind force for pushing the player around</summary>
+/// <remarks>
+/// Possible periodic functions for wind gusts include:
+///   1) \frac{\cos\left(2\pi\left(\frac{x}{d}+\frac{1}{2}\right)\right)+1}{2}
+///   2) \frac{\cos\left(2\pi x+\pi\right)\ -\ \sin^{2}\left(2\pi x+\pi\right)+\frac{5}{4}}{\frac{9}{4}}
+///   3) \frac{\cos\left(2\pi x+\pi\right)\ -\ \sin^{2}\left(4\pi x+\pi\right)+\frac{7}{4}}{\frac{11}{4}}
+///  See https://www.desmos.com/calculator to graph these functions.
+/// Possible periodic functions for wind direction changes:
+///   1) \frac{\cos\left(2\pi\left(\frac{x}{d}+\frac{3}{4}\right)\right)}{2}
+///   ...
+/// </remarks>
 public class Wind : MonoBehaviour
 {
 	/// <summary>Wind patterns for variety</summary>
 	private enum Pattern
 	{
 		Parallel
-		, Wave
 		, Turbulent
 		, Vortex
 	}
@@ -18,23 +27,32 @@ public class Wind : MonoBehaviour
 
 	private Vector2 prevailingDirection = Vector2.right;
 
-	[Tooltip("Strength multiplier for this wind object"), SerializeField]
+	[Tooltip("Strength of the prevailing wind"), SerializeField]
 
 	private float prevailingStrength = 1f;
 
-	[Tooltip("Wind may fluctuate from the prevailing strength by half this amount"), SerializeField]
+	[Tooltip("Strength of periodic wind gusts"), SerializeField]
 
-	private float gusts;
+	private float gustStrength = 0;
+
+	[Tooltip("How long periodic wind gusts last (in seconds)"), SerializeField]
+
+	private float gustDuration = 1f;
 
 	[Tooltip("Wind may deviate from the prevailing direction by half this angle (in degrees)"), SerializeField]
 
-	private float spread;
+	private float shiftAngle = 0;
 
-	[Tooltip("Wind may fluctuate from the prevailing strength by half this amount"), SerializeField]
+	[Tooltip("How long to complete one cycle of direction changes (in seconds)"), SerializeField]
+
+	private float shiftDuration = 0;
+
+	[Tooltip("Pattern of variability for this wind"), SerializeField]
 
 	private Pattern pattern = Pattern.Parallel;
 
 	private Vector2 _currentDirection;
+
 	private float _currentStrength;
 
 	private void Start()
@@ -50,7 +68,7 @@ public class Wind : MonoBehaviour
 	public Vector3 Force(Vector3 position)
 	{
 		Vector3 newDirection;
-		float deviation = spread;
+		float deviation = shiftAngle;
 		Bounds bounds = GetComponent<Collider>().bounds;
 		float relativePosition = position.x / bounds.size.x;
 		switch (pattern)
@@ -65,18 +83,22 @@ public class Wind : MonoBehaviour
 				newDirection = Quaternion.Euler(0, 0, deviation) * _currentDirection;
 				_currentDirection = newDirection;
 				break;
-			case Pattern.Wave:
-				deviation *= math.sin(10f * relativePosition);
-				newDirection = Quaternion.Euler(0, 0, deviation) * _currentDirection;
-				break;
 			case Pattern.Parallel:
 			default:
-				deviation *= spread * (Random.value - 0.5f);
-				_currentDirection = Quaternion.Euler(0, 0, deviation) * _currentDirection;
-				newDirection = _currentDirection;
+				newDirection = Direction;
 				break;
 		}
 		return Strength * newDirection;
+	}
+
+	public Vector3 Direction
+	{
+		get
+		{
+			float shift = shiftAngle * math.cos(2 * math.PI * (Time.time / shiftDuration + 0.75f));
+			_currentDirection = Quaternion.Euler(0, 0, shiftAngle) * prevailingDirection;
+			return _currentDirection;
+		}
 	}
 
 	/// <summary>Computes a possibly variable strength of the wind.</summary>
@@ -84,7 +106,9 @@ public class Wind : MonoBehaviour
 	{
 		get
 		{
-			_currentStrength = (1f + gusts * (Random.value - 0.5f)) * (prevailingStrength + _currentStrength) / 2f;
+			float gust = gustStrength * (math.cos(2 * math.PI * (Time.time / gustDuration + 0.5f)) + 1f);
+			_currentStrength = prevailingStrength + gust;
+			//print(_currentStrength + " " + Time.time);
 			return _currentStrength;
 		}
 	}

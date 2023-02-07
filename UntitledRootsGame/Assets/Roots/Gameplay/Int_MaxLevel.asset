@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf9bc8f861128049918bd4f61a18382, type: 3}
   m_Name: Int_MaxLevel
   m_EditorClassIdentifier: 
-  Value: 1
+  Value: 3

@@ -38,6 +38,11 @@ namespace Roots.UI
 			}
 		}
 
+		public void RestartLevel()
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		}
+
 		public void ReturnToMenu()
 		{
 			SceneManager.LoadScene("Menu");
