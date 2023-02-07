@@ -49,9 +49,9 @@ MonoBehaviour:
   prevailingDirection: {x: 1, y: 0}
   prevailingStrength: 10
   gustStrength: 0
-  gustDuration: 0
+  gustDuration: 1
   shiftAngle: 0
-  shiftDuration: 0
+  shiftDuration: 1
   pattern: 0
 --- !u!65 &7564420411153893452
 BoxCollider:

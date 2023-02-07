@@ -51,7 +51,7 @@ MonoBehaviour:
   gustStrength: 5
   gustDuration: 5
   shiftAngle: 0
-  shiftDuration: 0
+  shiftDuration: 1
   pattern: 2
 --- !u!135 &6589052338218695114
 SphereCollider:
