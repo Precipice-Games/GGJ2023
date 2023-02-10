@@ -12,18 +12,18 @@ public class RootSystem : MonoBehaviour
 	[SerializeField] private AudioClip _latch;
 	[SerializeField] private AudioClip _unlatch;
 	private AudioSource _source;
+
 	private const float RootDamper = 1000f;
 	private const float RootSpring = 200000f;
 	private const float RootTolerance = 0.01f;
 
 	[Tooltip("For limiting rotation of the seed while rooted."), SerializeField]
-
 	private float rootedAngularDrag = 20f;
+
 	[Tooltip("The roots provide stability against external forces like wind."), SerializeField]
-
 	private float rootedMass = 1000f;
-	[Tooltip("Provide a prefab for the visual representation of the roots."), SerializeField]
 
+	[Tooltip("Provide a prefab for the visual representation of the roots."), SerializeField]
 	private GameObject rootTendrils;
 
 	private Rigidbody _ground;
@@ -89,7 +89,6 @@ public class RootSystem : MonoBehaviour
 	private void Enroot(Rigidbody substrate)
 	{
 		_rootTendrils = Instantiate(rootTendrils, _transform, false);
-		_rootTendrils.transform.localPosition = new Vector3(0, 0.25f, 0);
 		_rootTendrils.SetActive(true);
 
 		_ground = substrate;
