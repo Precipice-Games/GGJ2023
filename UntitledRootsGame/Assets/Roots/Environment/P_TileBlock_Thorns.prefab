@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 1806205669508262303}
   - component: {fileID: 3368470324836902458}
   - component: {fileID: 674346562583384816}
+  - component: {fileID: 1432943077612851980}
   - component: {fileID: 7768380019305801414}
   - component: {fileID: 4841552206302809008}
+  - component: {fileID: 2339015642361876467}
   m_Layer: 0
   m_Name: P_TileBlock_Thorns
   m_TagString: Untagged
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1322719978652594981}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.65, y: 1.65, z: 1.65}
+  m_LocalScale: {x: 1.6666666, y: 1.6666666, z: 1.6666666}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,6 +88,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &1432943077612851980
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322719978652594981}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.25
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &7768380019305801414
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -97,8 +112,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.6038094, y: 2.4056144, z: 2.342946}
-  m_Center: {x: -0.0003863573, y: -0.099691935, z: -0.03515899}
+  m_Size: {x: 2.5, y: 2.5, z: 2.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4841552206302809008
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,3 +130,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2339015642361876467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322719978652594981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75a6af06a6fee4d49808d9ea367d1417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
