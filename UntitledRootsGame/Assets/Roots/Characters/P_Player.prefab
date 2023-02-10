@@ -525,7 +525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7551116466062277428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.993, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -679,6 +679,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a392b336b1ba1149832c64c9576134c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pappusPrefab: {fileID: 4319535548572643823, guid: fc7e68764d8ad764b83432f8c7eed1a0,
+    type: 3}
   <KillPlane>k__BackingField: -100
 --- !u!114 &5795810392444279322
 MonoBehaviour:
@@ -692,6 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58bcdb1f5d79f7a42b2cc5e1287e2eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lift: 0
 --- !u!82 &7862059892751079860
 AudioSource:
   m_ObjectHideFlags: 0
