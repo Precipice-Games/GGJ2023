@@ -6,28 +6,30 @@ namespace Roots.UI
 	public class UIPlayerWidget : MonoBehaviour
 	{
 		[SerializeField]
-		private Image _planet;
+		private Image planet;
 		[SerializeField]
-		private Image _clouds;
+		private Image clouds;
 		[SerializeField]
-		private RawImage _character;
+		private RawImage character;
 		[SerializeField]
 		private float speed, height;
 
-		private float charPos;
+		private float _charPos;
 
 		private void Start()
 		{
-			charPos = _character.rectTransform.position.y;
+			_charPos = character.rectTransform.position.y;
 		}
 
 		private void Update()
 		{
-			_planet.transform.Rotate(0,0,0.01f);
-			_clouds.transform.Rotate(0,0,0.005f);
+			planet.transform.Rotate(0,0,0.01f);
+			clouds.transform.Rotate(0,0,0.005f);
 
-			_character.rectTransform.position = new Vector3
-				(_character.rectTransform.position.x, Mathf.Sin(Time.time * speed) * height + charPos, _character.rectTransform.position.z);
+			var position = character.rectTransform.position;
+			position = new Vector3
+				(position.x, Mathf.Sin(Time.time * speed) * height + _charPos, position.z);
+			character.rectTransform.position = position;
 		}
 	}
 }

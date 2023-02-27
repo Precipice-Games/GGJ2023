@@ -1,10 +1,14 @@
 using UnityEngine;
 
-namespace Roots.Environment
+namespace Roots.Equipment
 {
+	/// <summary>
+	///	Player can destroy some crates on collision. Attach this script to a crate prefab to make it destructible.
+	/// </summary>
 	public class CrateSmash : MonoBehaviour
 	{
-		[SerializeField] private GameObject _fracturedCrate;
+		[SerializeField, Tooltip("Prefab representing the broken form of this block")]
+		private GameObject fracturedCrate;
 
 		private void OnCollisionEnter(Collision collision)
 		{
@@ -14,9 +18,13 @@ namespace Roots.Environment
 			}
 		}
 
+		/// <summary>
+		/// Destroys this crate by replacing it with a broken version.
+		/// </summary>
 		private void Shatter()
 		{
-			Instantiate(_fracturedCrate, transform.position, transform.rotation);
+			var crateTransform = transform;
+			Instantiate(fracturedCrate, crateTransform.position, crateTransform.rotation);
 			Destroy(this.gameObject);
 		}
 	}

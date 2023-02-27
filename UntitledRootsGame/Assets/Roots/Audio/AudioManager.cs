@@ -1,26 +1,29 @@
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+namespace Roots.Audio
 {
-	[SerializeField] private AudioClip _music;
-	[SerializeField] private AudioSource _source;
-	public static AudioManager Singleton { get; private set; }
-
-
-	private void Awake()
+	public class AudioManager : MonoBehaviour
 	{
-		DontDestroyOnLoad(this);
-		if (Singleton != null)
+		[SerializeField] private AudioClip music;
+		[SerializeField] private AudioSource source;
+		public static AudioManager Singleton { get; private set; }
+
+
+		private void Awake()
 		{
-			Destroy(gameObject);
-			return;
+			DontDestroyOnLoad(this);
+			if (Singleton != null)
+			{
+				Destroy(gameObject);
+				return;
+			}
+
+			Singleton = this;
 		}
 
-		Singleton = this;
-	}
-
-	private void Start()
-	{
-		_source.Play();
+		private void Start()
+		{
+			source.Play();
+		}
 	}
 }

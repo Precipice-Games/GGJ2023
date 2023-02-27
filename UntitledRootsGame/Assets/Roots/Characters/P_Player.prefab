@@ -405,7 +405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7209029054964598076
 RectTransform:
   m_ObjectHideFlags: 0
@@ -661,8 +661,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1692c8a55977f5549b5f6f22c04e0fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _latch: {fileID: 8300000, guid: d6bba8ac2c5b5954ba69d901b5e89c6b, type: 3}
-  _unlatch: {fileID: 8300000, guid: 929bc92d3fb2daa438e83bdae94d6d23, type: 3}
+  latch: {fileID: 8300000, guid: 929bc92d3fb2daa438e83bdae94d6d23, type: 3}
+  unlatch: {fileID: 8300000, guid: d6bba8ac2c5b5954ba69d901b5e89c6b, type: 3}
   rootedAngularDrag: 20
   rootedMass: 1000
   rootTendrils: {fileID: 2370441922565977768, guid: 3ffabbc7770641845872e25a7a9e22ce,
@@ -679,9 +679,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a392b336b1ba1149832c64c9576134c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <KillPlane>k__BackingField: -100
   pappusPrefab: {fileID: 4319535548572643823, guid: fc7e68764d8ad764b83432f8c7eed1a0,
     type: 3}
-  <KillPlane>k__BackingField: -100
 --- !u!114 &5795810392444279322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7551116466062277428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58bcdb1f5d79f7a42b2cc5e1287e2eed, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d4f71e2064896c42acf39131e0e9df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lift: 0

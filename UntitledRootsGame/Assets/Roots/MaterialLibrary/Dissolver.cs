@@ -2,21 +2,27 @@ using UnityEngine;
 
 namespace Roots.MaterialLibrary
 {
+	/// <summary>
+	/// Adds a visual effect for disintegration. Attach this to any GameObject that has a SkinnedMesh.
+	/// </summary>
 	public class Dissolver : MonoBehaviour
 	{
+		[SerializeField, Tooltip("Seconds until the dissolving object is destroyed")]
+		private float dissolveSpeed;
+
 		private Material _mat;
-		public float dissolveSpeed;
+		private static readonly int s_noiseStrength = Shader.PropertyToID("_NoiseStrength");
 
 		private void Start()
 		{
 			_mat = GetComponent<SkinnedMeshRenderer>().material;
 		}
 
-		public void Update()
+		private void Update()
 		{
 			if(Input.GetKeyDown(KeyCode.Tab))
 			{
-				_mat.SetFloat("_NoiseStrength", Mathf.MoveTowards(_mat.GetFloat("_NoiseStrength"), 1f, dissolveSpeed * Time.deltaTime));
+				_mat.SetFloat(s_noiseStrength, Mathf.MoveTowards(_mat.GetFloat(s_noiseStrength), 1f, dissolveSpeed * Time.deltaTime));
 				Destroy(this.gameObject);
 			}
 		}
