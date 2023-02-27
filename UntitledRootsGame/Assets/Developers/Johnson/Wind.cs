@@ -6,12 +6,12 @@ using Random = UnityEngine.Random;
 /// <summary>Wind force for pushing the player around</summary>
 /// <remarks>
 /// Possible periodic functions for wind gusts include:
-///   1) \frac{\cos\left(2\pi\left(\frac{x}{d}+\frac{1}{2}\right)\right)+1}{2}
+///  *1) \cos\left(2\pi\frac{x}{d}\right)
 ///   2) \frac{\cos\left(2\pi x+\pi\right)\ -\ \sin^{2}\left(2\pi x+\pi\right)+\frac{5}{4}}{\frac{9}{4}}
 ///   3) \frac{\cos\left(2\pi x+\pi\right)\ -\ \sin^{2}\left(4\pi x+\pi\right)+\frac{7}{4}}{\frac{11}{4}}
 ///  See https://www.desmos.com/calculator to graph these functions.
 /// Possible periodic functions for wind direction changes:
-///   1) \frac{\cos\left(2\pi\left(\frac{x}{d}+\frac{3}{4}\right)\right)}{2}
+///  (1) \cos\left(2\pi\frac{x}{d}\right)
 ///   ...
 /// </remarks>
 public class Wind : MonoBehaviour
@@ -25,31 +25,24 @@ public class Wind : MonoBehaviour
 	}
 
 	[Tooltip("Direction vector in the X-Y plane"), SerializeField]
-
 	private Vector2 prevailingDirection = Vector2.right;
 
 	[Tooltip("Strength of the prevailing wind"), SerializeField]
-
 	private float prevailingStrength = 1f;
 
-	[Tooltip("Strength of periodic wind gusts"), SerializeField]
-
+	[Tooltip("Max deviation (+/-) from the prevailing strength."), SerializeField]
 	private float gustStrength = 0;
 
 	[Tooltip("How long periodic wind gusts last (in seconds). NOTE: Must be strictly positive!"), SerializeField]
-
 	private float gustDuration = 1f;
 
 	[Tooltip("Wind may deviate from the prevailing direction by half this angle (in degrees)"), SerializeField]
-
 	private float shiftAngle = 0;
 
-	[Tooltip("How long to complete one cycle of direction change (in seconds). NOTE: Must be strictly positive!"), SerializeField]
-
+	[Tooltip("How long periodic direction shifts take (in seconds). NOTE: Must be strictly positive!"), SerializeField]
 	private float shiftDuration = 1f;
 
 	[Tooltip("Pattern of variability for this wind"), SerializeField]
-
 	private Pattern pattern = Pattern.Parallel;
 
 	private Vector2 _currentDirection;
@@ -91,6 +84,7 @@ public class Wind : MonoBehaviour
 				newDirection = Direction;
 				break;
 		}
+
 		return Strength * newDirection;
 	}
 
@@ -98,7 +92,7 @@ public class Wind : MonoBehaviour
 	{
 		get
 		{
-			float shift = shiftAngle * math.cos(2 * math.PI * (Time.time / shiftDuration + 0.75f));
+			float shift = shiftAngle * math.cos(2 * math.PI * Time.time / shiftDuration);
 			_currentDirection = Quaternion.Euler(0, 0, shiftAngle) * prevailingDirection;
 			return _currentDirection;
 		}
@@ -109,9 +103,8 @@ public class Wind : MonoBehaviour
 	{
 		get
 		{
-			float gust = gustStrength * (math.cos(2 * math.PI * (Time.time / gustDuration + 0.5f)) + 1f);
+			float gust = gustStrength * math.cos(2 * math.PI * Time.time / gustDuration);
 			_currentStrength = prevailingStrength + gust;
-			//print(_currentStrength + " " + Time.time);
 			return _currentStrength;
 		}
 	}

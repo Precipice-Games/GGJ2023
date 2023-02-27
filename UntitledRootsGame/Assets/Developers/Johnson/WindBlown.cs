@@ -1,42 +1,47 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 /// <summary>Governs the behavior of objects susceptible to wind.</summary>
 public class WindBlown : MonoBehaviour
 {
-    /// <summary>Reference to wind currently affecting this object.</summary>
-    internal Wind _windZone;
+	/// <summary>Used for objects that should be carried up by the wind (e.g., Brootus' pappus).</summary>
+	[SerializeField, Tooltip("TBD")] private float lift = 0f;
 
-    private Rigidbody _rb;
+	/// <summary>Reference to wind currently affecting this object.</summary>
+	internal Wind _windZone;
 
-    /// <summary>Checks whether this object is under the influence of wind.</summary>
-    public bool InWindZone => _windZone;
+	private Rigidbody _rb;
 
-    void Start()
-    {
-        _rb = GetComponent<Rigidbody>();
-    }
+	/// <summary>Checks whether this object is under the influence of wind.</summary>
+	public bool InWindZone => _windZone;
 
-    void FixedUpdate()
-    {
-        if (InWindZone)
-        {
-            _rb.AddForce(_windZone.Force(transform.position));
-        }
-    }
+	void Start()
+	{
+		_rb = GetComponent<Rigidbody>();
+	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Wind"))
-        {
-            _windZone = other.GetComponent<Wind>();
-        }
-    }
+	void FixedUpdate()
+	{
+		if (InWindZone)
+		{
+			var windForce = _windZone.Force(transform.position);
+			_rb.AddForce(windForce + lift * windForce.magnitude * Vector3.up);
+		}
+	}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Wind"))
-        {
-            _windZone = null;
-        }
-    }
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag("Wind"))
+		{
+			_windZone = other.GetComponent<Wind>();
+		}
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.CompareTag("Wind") && other.GetComponent<Wind>() == _windZone)
+		{
+			_windZone = null;
+		}
+	}
 }
