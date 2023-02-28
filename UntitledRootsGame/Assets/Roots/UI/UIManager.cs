@@ -5,8 +5,9 @@ namespace Roots.UI
 {
 	public class UIManager : MonoBehaviour
 	{
+		[SerializeField] private GameObject pauseMenu;
+
 		private bool _isPaused;
-		public GameObject pauseMenu;
 
 		private void Awake()
 		{
