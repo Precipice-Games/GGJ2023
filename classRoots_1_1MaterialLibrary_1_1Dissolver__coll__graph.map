@@ -1,4 +1,4 @@
 <map id="Roots.MaterialLibrary.Dissolver" name="Roots.MaterialLibrary.Dissolver">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,231,107"/>
+<area shape="rect" id="node1" title="Adds a visual effect for disintegration. Attach this to any GameObject that has a SkinnedMesh." alt="" coords="5,80,231,107"/>
 <area shape="rect" id="node2" title=" " alt="" coords="56,5,180,32"/>
 </map>

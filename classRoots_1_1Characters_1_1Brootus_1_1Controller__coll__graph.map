@@ -1,0 +1,5 @@
+<map id="Roots.Characters.Brootus.Controller" name="Roots.Characters.Brootus.Controller">
+<area shape="rect" id="node1" title="Provides for the mechanics of the player character, Brootus." alt="" coords="5,185,196,227"/>
+<area shape="rect" id="node2" title=" " alt="" coords="33,5,157,32"/>
+<area shape="rect" id="node3" href="$classRoots_1_1Characters_1_1Brootus_1_1RootSystem.html" title="Governs the mechanics of rooting to &quot;substrate&quot; objects in the world." alt="" coords="117,81,308,123"/>
+</map>

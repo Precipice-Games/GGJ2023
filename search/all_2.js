@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['dissolver_2',['Dissolver',['../classRoots_1_1MaterialLibrary_1_1Dissolver.html',1,'Roots::MaterialLibrary']]]
+  ['controller_2',['Controller',['../classRoots_1_1Characters_1_1Brootus_1_1Controller.html',1,'Roots::Characters::Brootus']]],
+  ['cratesmash_3',['CrateSmash',['../classRoots_1_1Equipment_1_1CrateSmash.html',1,'Roots::Equipment']]]
 ];

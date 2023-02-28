@@ -1,0 +1,4 @@
+<map id="Roots.Environment.Wind" name="Roots.Environment.Wind">
+<area shape="rect" id="node1" title="Wind force for pushing the player around" alt="" coords="5,80,188,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="35,5,159,32"/>
+</map>
