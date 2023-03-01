@@ -11,6 +11,7 @@ In this unconventional "platformer", you are a seed that cannot move itself, but
 - [Odyseed GDD](https://docs.google.com/document/d/1K3XV2dinHBD02c8aoeVlIrR6SvaFO3rpspR0cEQxwXU/edit?usp=sharing)
 - [Odyseed API Documentation](https://precipice-games.github.io/Odyseed/)
 - [Precipice Games on itch](https://precipice-games.itch.io/)
+- [Precipice Games titles on Steam](https://store.steampowered.com/search/?developer=Precipice%20Games)
 - [Games and Emerging Media at Marist College](https://www.marist.edu/games-emerging-media)
 - [Global Game Jam](https://globalgamejam.org/)
 
