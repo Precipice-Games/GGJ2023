@@ -17,6 +17,8 @@ jobs:
 #       pull-requests: write
 
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
       - uses: ppremk/lfs-warning@v3.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }} # Optional
