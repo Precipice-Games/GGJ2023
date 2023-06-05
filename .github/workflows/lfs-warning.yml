@@ -16,4 +16,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }} # Optional
           filesizelimit: 10MB
           exclusionPatterns: |
-            **/*.png
+            **/*.unity
